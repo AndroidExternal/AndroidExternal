@@ -4,10 +4,27 @@
 # gives unlimited permission to copy and/or distribute it,
 # with or without modifications, as long as this notice is preserved.
 
+unset RMONLY
+
+while getopts ":a" opt; do
+  case $opt in
+    r)
+      echo "Only removing directories." >&2
+      RMONLY=true;
+      ;;
+    \?)
+      echo "Usage: bash AndroidExternal.sh [-r]" >&2
+      ;;
+  esac
+done
+
 cd external;
 
 if [ -e "$(pwd)/AndroidExternal.repos" ]; then
   rm -rf AndroidExternal.repos;
+  if [ -n "$RMONLY" ]; then
+    exit 0;
+  fi;
 fi;
 
 if [ -n "$(which wget)" ]; then
