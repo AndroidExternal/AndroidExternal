@@ -1,1 +1,1 @@
-sqlite proguard chromium-webview chromium-libpac v8 libpng webp vixl zlib libphonenumber fio valgrind wpa_suplicant_8 freetype expat libxml2 ltrace elfutils jemalloc
+sqlite proguard chromium-webview chromium-libpac v8 libpng webp vixl zlib libphonenumber fio valgrind wpa_suplicant_8 freetype expat libxml2 ltrace
